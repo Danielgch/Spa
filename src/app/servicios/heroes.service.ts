@@ -53,7 +53,7 @@ export class HeroesService {
             aparicion: "1974-11-01",
             casa: "Marvel"
         }
-    ];
+    ];  
     constructor() {
         console.log("Servicio listo para usar!!!");
     }
