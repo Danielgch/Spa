@@ -10,14 +10,14 @@ export interface Heroe {
 @Injectable()
 export class HeroesService {
 
-    private heroes: Heroe [] = [
+    private heroes: Heroe[] = [
         {
             nombre: "Aquaman",
             bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
             img: "assets/img/aquaman.png",
             aparicion: "1941-11-01",
             casa: "DC",
-            type:"assets/img/DC.png"
+            type: "assets/img/DC.png"
         },
         {
             nombre: "Batman",
@@ -25,7 +25,7 @@ export class HeroesService {
             img: "assets/img/batman.png",
             aparicion: "1939-05-01",
             casa: "DC",
-            type:"assets/img/DC.png"
+            type: "assets/img/DC.png"
         },
         {
             nombre: "Daredevil",
@@ -33,7 +33,7 @@ export class HeroesService {
             img: "assets/img/daredevil.png",
             aparicion: "1964-01-01",
             casa: "Marvel",
-            type:"assets/img/marvel.png"
+            type: "assets/img/marvel.png"
         },
         {
             nombre: "Hulk",
@@ -41,7 +41,7 @@ export class HeroesService {
             img: "assets/img/hulk.png",
             aparicion: "1962-05-01",
             casa: "Marvel",
-            type:"assets/img/marvel.png"
+            type: "assets/img/marvel.png"
         },
         {
             nombre: "Linterna Verde",
@@ -49,7 +49,7 @@ export class HeroesService {
             img: "assets/img/linterna-verde.png",
             aparicion: "1940-06-01",
             casa: "DC",
-            type:"assets/img/DC.png"
+            type: "assets/img/DC.png"
         },
         {
             nombre: "Spider-Man",
@@ -57,7 +57,7 @@ export class HeroesService {
             img: "assets/img/spiderman.png",
             aparicion: "1962-08-01",
             casa: "Marvel",
-            type:"assets/img/marvel.png"
+            type: "assets/img/marvel.png"
         },
         {
             nombre: "Wolverine",
@@ -65,9 +65,9 @@ export class HeroesService {
             img: "assets/img/wolverine.png",
             aparicion: "1974-11-01",
             casa: "Marvel",
-            type:"assets/img/marvel.png"
+            type: "assets/img/marvel.png"
         }
-    ];  
+    ];
     constructor() {
         console.log("Servicio listo para usar!!!");
     }
@@ -76,8 +76,23 @@ export class HeroesService {
         return this.heroes;
     }
 
-    getHeroe(idx: string){
+    getHeroe(idx: string) {
         return this.heroes[idx];
     }
+
+    buscarHeroes(termino: string) {
+        let heroesArr: Heroe[] = [];
+        termino = termino.toLowerCase();
+
+        for (let heroe of this.heroes) {
+            let nombre = heroe.nombre.toLowerCase();
+            if (nombre.indexOf(termino) >= 0) {
+
+                heroesArr.push(heroe)
+            }
+        }
+        return heroesArr;
+    }
+
 }
 
