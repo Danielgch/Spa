@@ -9,5 +9,5 @@
 </div>
 
 <div class="card-columns">
-  <app-heroe-tarjeta [heroe]="heroTarjeta" [index]="i" *ngFor="let heroTarjeta of heroes; let i = index"></app-heroe-tarjeta>
+  <app-heroe-tarjeta [heroe]="heroTarjeta" [index]="heroTarjeta.idx" *ngFor="let heroTarjeta of heroes"></app-heroe-tarjeta>
 </div>

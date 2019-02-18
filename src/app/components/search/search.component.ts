@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   heroes: any[] = [];
-  termino:string;
+  termino: string;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private  _heroesService: HeroesService) {
+    private _heroesService: HeroesService) {
     // console.log("constructor")
   }
 
